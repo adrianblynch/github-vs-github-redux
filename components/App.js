@@ -1,18 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
 import Scoreboard from './Scoreboard'
-import fixtures from 'json!./fixtures.json'
+import fixtures from 'json!../fixtures.json'
 
 /*
 	Todos/Notes:
-		- Implement redux
+		- Implement redux - In progress!
 		- Move the username field into its own component - Forcing us to implement comms between components
 		- Add the `warn` class in a better(?) way: http://www.chloechen.io/react-animation-done-in-two-ways/
 		- Are `handleReposResponse` and `handleReposFailure` worth it?
 */
 
-class App extends React.Component {
+export default class App extends React.Component {
 
 	constructor() {
 		super()
@@ -24,8 +23,8 @@ class App extends React.Component {
 
 	componentDidMount() {
 		ReactDOM.findDOMNode(this.refs.username).focus();
-		fixtures.users.sort(this.sortByStarCount)
-		this.setState(fixtures)
+		this.props.users.sort(this.sortByStarCount)
+		this.setState({ users: this.props.users })
 	}
 
 	addUserIfNotPresent(user) {
@@ -104,5 +103,3 @@ class App extends React.Component {
 	}
 
 }
-
-export default App
