@@ -1,3 +1,5 @@
-# GitHub vs GitHub
+# GitHub vs GitHub - Redux
 
-My _learn react through doing_ application.
+My _learn-React-with-Redux-through-doing_ application.
+
+A fork of [Github vs Github](https://github.com/adrianblynch/github-vs-github).
