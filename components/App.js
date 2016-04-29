@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { connect } from 'react-redux'
 import Scoreboard from './Scoreboard'
 import fixtures from 'json!../fixtures.json'
 
@@ -11,7 +12,7 @@ import fixtures from 'json!../fixtures.json'
 		- Are `handleReposResponse` and `handleReposFailure` worth it?
 */
 
-export default class App extends React.Component {
+class App extends React.Component {
 
 	constructor() {
 		super()
@@ -103,3 +104,9 @@ export default class App extends React.Component {
 	}
 
 }
+
+const mapStateToProps = (state) => ({
+	users: state.users
+})
+
+export default connect(mapStateToProps, null)(App)

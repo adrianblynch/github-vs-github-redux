@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import App from './components/App.js'
 import fixtures from 'json!./fixtures.json' // Default users come from our fixtures file - For now
 
@@ -18,12 +19,9 @@ const reducer = (state = fixtures, action) => {
 
 const store = createStore(reducer)
 
-const render = () => {
-	ReactDOM.render(
-		<App users={store.getState().users} />,
-		document.getElementById('app')
-	)
-}
-
-render()
-store.subscribe(render)
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('app')
+)
