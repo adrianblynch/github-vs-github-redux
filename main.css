@@ -49,7 +49,7 @@ ul {
 	padding: 0px;
 }
 
-h3 a {
+h3, h3 a {
 	font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
 	text-decoration: none;
 	color: #333;
