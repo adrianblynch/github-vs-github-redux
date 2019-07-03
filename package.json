@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Adrian Lynch (adi_ady_ade@hotmail.com)",
@@ -23,6 +25,8 @@
     "redux": "^3.5.2",
     "redux-promise": "^0.5.3",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
-  }
+    "webpack-dev-server": "^1.14.1",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
